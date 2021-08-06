@@ -1,0 +1,31 @@
+{
+  "name": "parabellum-kyc-aml-nft",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "mongodb": "^4.1.0",
+    "muicss": "^0.10.3",
+    "react": "^16.8.6",
+    "react-datepicker": "^3.3.0",
+    "react-dom": "^16.8.6",
+    "react-localization": "^1.0.13",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "cross-env PORT=3000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "openbrowser": "node -e 'const openBrowser = require(\"react-dev-utils/openBrowser\"); openBrowser(\"http://localhost:3000\"); process.exit();'"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

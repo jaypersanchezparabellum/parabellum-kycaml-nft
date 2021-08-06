@@ -1,0 +1,2051 @@
+.App { /* Base font style */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 16.0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(0, 0, 0, 0.8500);
+  background-color: #f6f6f6;
+}
+
+.App .baseFont * { /* Base font style override for UI framework components */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 16.0px;
+}
+
+.App .appBg {
+  background-color: #f6f6f6;
+}
+
+.App .cardBg {
+  background-color: white;
+}
+
+.App .baseTextBg { /* Base text color as background */
+  background-color: rgba(0, 0, 0, 0.8500);
+}
+
+.App .secondaryTextColor {
+  color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .secondaryTextBg {
+  background-color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .primaryTextColor {
+  color: #bee9ee;
+}
+
+.App .primaryBg {
+  background-color: #bee9ee;
+}
+
+.App .highlightTextColor {
+  color: #0093d5;
+}
+
+.App .highlightBg {
+  background-color: #0093d5;
+}
+
+@media (display-mode: standalone) {
+  .App {
+    user-select: none;
+  }
+}
+
+/* Styles to customize the UI framework plugin (MUI, https://muicss.com) */
+.mui-btn {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn--primary {
+    background-color: #bee9ee;
+}
+.mui-btn--primary:active, .mui-btn--primary:focus, .mui-btn--primary:hover {
+    background-color: #c3ebf0;
+}
+.mui-btn--accent {
+    background-color: #0093d5;
+}
+.mui-btn--accent:active, .mui-btn--accent:focus, .mui-btn--accent:hover {
+    background-color: #069fda;
+}
+.mui-textfield {  /* Reset UI framework styling that affects layout */
+    margin-bottom: 0;
+}
+.mui-textfield>input, .mui-textfield>textarea {
+    font-size: inherit;
+}
+.mui-checkbox, .mui-radio {  /* Reset UI framework styling that affects layout */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-select {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn+.mui-btn {  /* Reset UI framework styling that affects layout */
+    margin-left: 0;
+}
+.mui-btn--fab {  /* Reset UI framework styling that breaks compositing */
+    z-index: auto;
+}
+
+@media (min-width: 320px) {
+  .mui-container {
+    max-width: 320px;
+  }
+}
+@media (min-width: 568px) {
+  .mui-container {
+    max-width: 568px;
+  }
+}
+@media (min-width: 768px) {
+  .mui-container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .mui-container {
+    max-width: 1024px;
+  }
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@keyframes slideIn_right {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+@keyframes slideIn_bottom {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+/* System font classes */
+
+.App .systemFontRegular {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+.App .systemFontBold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: 600;
+}
+.App .systemFontItalic {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-style: italic;
+}
+.App .systemFontBoldItalic {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* App-wide text styles specified in React Studio */
+
+.App .actionFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 15.0px;
+  font-weight: 400;
+}
+.App .actionFont * {
+  font-size: 15.0px;
+}
+.App .headlineFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 20.0px;
+  font-weight: 600;
+}
+.App .headlineFont * {
+  font-size: 20.0px;
+}
+.App .navBar {
+  background-color: #bee9ee;
+  color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 18px;
+}
+
+.App .navBar a {
+  color: black;
+}
+
+.App .navBar .title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+}
+
+.App .navBar .backBtn {
+  position: absolute;
+  padding: 4px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.App .navBar > div {
+  margin-top: 7px;
+}
+
+.App .tabBar {
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+}
+.App .tabBar > * {
+  flex: 1 0 auto;
+  text-align: center;
+}
+.App .tabBar div {
+  box-sizing: border-box;
+  line-height: normal;
+}
+.App .tabBar img {
+  height: 24px;
+  padding-top: 6px;
+}
+@media (min-width: 568px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+@media (min-width: 768px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+@media (min-width: 1024px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+.AppScreen {
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.App .background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.App .layoutFlow {
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+}
+.App .layoutFlow:before {  /* Prevent margin collapse */
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .layoutFlow .flowRow {
+  position: relative;
+  width: 100%;
+}
+
+.App .screenFgContainer {
+  /* Items in the foreground group within a screen are placed with fixed positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.App .foreground {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.App ul {
+  margin: 0;
+  padding: 0;
+}
+.App li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+.App .hasNestedComps {
+  position: relative;
+}
+.App .hasNestedComps:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .hasNestedComps .background {
+  position: absolute;
+}
+.App .hasNestedComps .layoutFlow {
+  position: relative;
+}
+.App .bottomAlignedContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.App .blockInputOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  z-index: 99999999;
+}
+
+.App .marker {
+  width: 0px;
+  height: 0px;
+}
+
+.App .drawer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.App .drawerOpen {
+  transform: translateX(0%);
+  transition: 0.3s;
+}
+
+.App .drawerClosedLeft {
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+
+.App .drawerClosedRight {
+  transform: translateX(100%);
+  transition: 0.3s;
+}
+
+.App .drawerContent {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App .drawerContent > * {
+  height: 100%;
+}
+
+.SupportingDocumentUploadScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .SupportingDocumentUploadScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+
+
+  .SupportingDocumentUploadScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 1280px;
+    margin-left: 0px;
+  }
+  .SupportingDocumentUploadScreen > .layoutFlow > .elSpacer > * { 
+  width: 1280px;
+  height: 100px;
+  }
+  
+
+
+  .SupportingDocumentUploadScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 23px;
+    width: 238px;
+    margin-left: 20px;
+  }
+  .SupportingDocumentUploadScreen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+
+
+  .SupportingDocumentUploadScreen > .layoutFlow > .elPicker {
+    position: relative;
+    margin-top: 22px;
+    width: 181px;
+    margin-left: 20px;
+  }
+  .SupportingDocumentUploadScreen > .layoutFlow > .elPicker > * { 
+  width: 181px;
+  }
+  
+
+
+  .SupportingDocumentUploadScreen > .layoutFlow > .elXanoFileUpload {
+    position: relative;
+    margin-top: -29px;
+    width: 181px;
+    margin-left: 290px;
+  }
+  .SupportingDocumentUploadScreen > .layoutFlow > .elXanoFileUpload > * { 
+  width: 181px;
+  height: 34px;
+  }
+  
+
+.SupportingDocumentUploadScreen .elButton2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.SupportingDocumentUploadScreen .elButton2 button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .SupportingDocumentUploadScreen > .layoutFlow > .elButton2 {
+    line-height: 35px;
+    position: relative;
+    margin-top: 38px;
+    width: 145px;
+    margin-left: 20px;
+  }
+  .SupportingDocumentUploadScreen > .layoutFlow > .elButton2 > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+
+
+  .SupportingDocumentUploadScreen > .layoutFlow > .elCamera {
+    position: relative;
+    margin-top: 32px;
+    width: 163px;
+    margin-left: 20px;
+  }
+  .SupportingDocumentUploadScreen > .layoutFlow > .elCamera > * { 
+  width: 163px;
+  height: 163px;
+  }
+  
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .background > .state0_elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .background > .state0_elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .background > .state0_elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .background > .state0_elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 683px;
+    margin-left: 0px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elSpacer > * { 
+  width: 683px;
+  height: 50px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 683px;
+    margin-left: 0px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elSpacer > * { 
+  width: 683px;
+  height: 50px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 683px;
+    margin-left: 0px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elSpacer > * { 
+  width: 683px;
+  height: 50px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 683px;
+    margin-left: 0px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elSpacer > * { 
+  width: 683px;
+  height: 50px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField {
+    position: relative;
+    margin-top: 29px;
+    width: 226px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField {
+    position: relative;
+    margin-top: 29px;
+    width: 226px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField {
+    position: relative;
+    margin-top: 29px;
+    width: 225px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField {
+    position: relative;
+    margin-top: 29px;
+    width: 225px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;
+    width: 71px;
+    margin-left: 1048px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText > * { 
+  width: 71px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;
+    width: 71px;
+    margin-left: 1048px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText > * { 
+  width: 71px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;
+    width: 71px;
+    margin-left: 1042px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText > * { 
+  width: 71px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;
+    width: 71px;
+    margin-left: 1042px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText > * { 
+  width: 71px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField3 {
+    position: relative;
+    margin-top: -37px;
+    width: 226px;
+    margin-left: 706px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField3 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField3 {
+    position: relative;
+    margin-top: -37px;
+    width: 226px;
+    margin-left: 706px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField3 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField3 {
+    position: relative;
+    margin-top: -37px;
+    width: 225px;
+    margin-left: 702px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField3 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField3 {
+    position: relative;
+    margin-top: -37px;
+    width: 225px;
+    margin-left: 702px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField3 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField2 {
+    position: relative;
+    margin-top: -31px;
+    width: 226px;
+    margin-left: 347px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField2 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField2 {
+    position: relative;
+    margin-top: -31px;
+    width: 226px;
+    margin-left: 347px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField2 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField2 {
+    position: relative;
+    margin-top: -31px;
+    width: 225px;
+    margin-left: 344px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField2 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField2 {
+    position: relative;
+    margin-top: -31px;
+    width: 225px;
+    margin-left: 344px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField2 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField5 {
+    position: relative;
+    margin-top: 105px;
+    width: 226px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField5 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField5 {
+    position: relative;
+    margin-top: 105px;
+    width: 226px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField5 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField5 {
+    position: relative;
+    margin-top: 104px;
+    width: 225px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField5 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField5 {
+    position: relative;
+    margin-top: 104px;
+    width: 225px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField5 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField6 {
+    position: relative;
+    margin-top: -31px;
+    width: 226px;
+    margin-left: 344px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField6 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField6 {
+    position: relative;
+    margin-top: -31px;
+    width: 226px;
+    margin-left: 344px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField6 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField6 {
+    position: relative;
+    margin-top: -31px;
+    width: 225px;
+    margin-left: 342px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField6 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField6 {
+    position: relative;
+    margin-top: -31px;
+    width: 225px;
+    margin-left: 342px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField6 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField7 {
+    position: relative;
+    margin-top: 67px;
+    width: 226px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField7 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField7 {
+    position: relative;
+    margin-top: 67px;
+    width: 226px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField7 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField7 {
+    position: relative;
+    margin-top: 66px;
+    width: 225px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField7 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField7 {
+    position: relative;
+    margin-top: 66px;
+    width: 225px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField7 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField10 {
+    position: relative;
+    margin-top: -67px;
+    width: 226px;
+    margin-left: 960px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField10 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField10 {
+    position: relative;
+    margin-top: -67px;
+    width: 226px;
+    margin-left: 960px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField10 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField10 {
+    position: relative;
+    margin-top: -66px;
+    width: 225px;
+    margin-left: 954px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField10 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField10 {
+    position: relative;
+    margin-top: -66px;
+    width: 225px;
+    margin-left: 954px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField10 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField9 {
+    position: relative;
+    margin-top: -24px;
+    width: 226px;
+    margin-left: 692px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField9 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField9 {
+    position: relative;
+    margin-top: -24px;
+    width: 226px;
+    margin-left: 692px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField9 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField9 {
+    position: relative;
+    margin-top: -24px;
+    width: 225px;
+    margin-left: 688px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField9 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField9 {
+    position: relative;
+    margin-top: -24px;
+    width: 225px;
+    margin-left: 688px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField9 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField8 {
+    position: relative;
+    margin-top: -22px;
+    width: 226px;
+    margin-left: 360px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField8 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField8 {
+    position: relative;
+    margin-top: -22px;
+    width: 226px;
+    margin-left: 360px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField8 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField8 {
+    position: relative;
+    margin-top: -22px;
+    width: 225px;
+    margin-left: 358px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField8 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField8 {
+    position: relative;
+    margin-top: -22px;
+    width: 225px;
+    margin-left: 358px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField8 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField11 {
+    position: relative;
+    margin-top: 58px;
+    width: 226px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField11 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField11 {
+    position: relative;
+    margin-top: 58px;
+    width: 226px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField11 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField11 {
+    position: relative;
+    margin-top: 58px;
+    width: 225px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField11 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField11 {
+    position: relative;
+    margin-top: 58px;
+    width: 225px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField11 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField12 {
+    position: relative;
+    margin-top: -34px;
+    width: 226px;
+    margin-left: 380px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField12 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField12 {
+    position: relative;
+    margin-top: -34px;
+    width: 226px;
+    margin-left: 380px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField12 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField12 {
+    position: relative;
+    margin-top: -34px;
+    width: 225px;
+    margin-left: 378px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField12 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField12 {
+    position: relative;
+    margin-top: -34px;
+    width: 225px;
+    margin-left: 378px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField12 > * { 
+  width: 225px;
+  }
+  
+}
+
+.KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker {
+  pointer-events: auto;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker {
+    position: relative;
+    margin-top: -358px;
+    width: 181px;
+    margin-left: 1130px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker > * { 
+  width: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker {
+    position: relative;
+    margin-top: -358px;
+    width: 181px;
+    margin-left: 1130px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker > * { 
+  width: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker {
+    position: relative;
+    margin-top: -356px;
+    width: 180px;
+    margin-left: 1122px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker > * { 
+  width: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker {
+    position: relative;
+    margin-top: -356px;
+    width: 180px;
+    margin-left: 1122px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker > * { 
+  width: 180px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker2 {
+    position: relative;
+    margin-top: 331px;
+    width: 181px;
+    margin-left: 200px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker2 > * { 
+  width: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker2 {
+    position: relative;
+    margin-top: 331px;
+    width: 181px;
+    margin-left: 200px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker2 > * { 
+  width: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker2 {
+    position: relative;
+    margin-top: 329px;
+    width: 180px;
+    margin-left: 198px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker2 > * { 
+  width: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker2 {
+    position: relative;
+    margin-top: 329px;
+    width: 180px;
+    margin-left: 198px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker2 > * { 
+  width: 180px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker3 {
+    position: relative;
+    margin-top: -20px;
+    width: 181px;
+    margin-left: 720px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker3 > * { 
+  width: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker3 {
+    position: relative;
+    margin-top: -20px;
+    width: 181px;
+    margin-left: 720px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker3 > * { 
+  width: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker3 {
+    position: relative;
+    margin-top: -20px;
+    width: 180px;
+    margin-left: 716px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker3 > * { 
+  width: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker3 {
+    position: relative;
+    margin-top: -20px;
+    width: 180px;
+    margin-left: 716px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker3 > * { 
+  width: 180px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText3 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -6px;
+    width: 238px;
+    margin-left: 440px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText3 > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText3 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -6px;
+    width: 238px;
+    margin-left: 440px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText3 > * { 
+  width: 238px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText3 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -6px;
+    width: 236px;
+    margin-left: 437px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText3 > * { 
+  width: 236px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText3 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -6px;
+    width: 236px;
+    margin-left: 437px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText3 > * { 
+  width: 236px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;
+    width: 238px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText2 > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;
+    width: 238px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText2 > * { 
+  width: 238px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;
+    width: 236px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText2 > * { 
+  width: 236px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -10px;
+    width: 236px;
+    margin-left: 20px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText2 > * { 
+  width: 236px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField4 {
+    position: relative;
+    margin-top: 59px;
+    width: 226px;
+    margin-left: 31px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField4 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField4 {
+    position: relative;
+    margin-top: 59px;
+    width: 226px;
+    margin-left: 31px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField4 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField4 {
+    position: relative;
+    margin-top: 58px;
+    width: 225px;
+    margin-left: 31px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField4 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField4 {
+    position: relative;
+    margin-top: 58px;
+    width: 225px;
+    margin-left: 31px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField4 > * { 
+  width: 225px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker5 {
+    position: relative;
+    margin-top: -20px;
+    width: 181px;
+    margin-left: 1100px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker5 > * { 
+  width: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker5 {
+    position: relative;
+    margin-top: -20px;
+    width: 181px;
+    margin-left: 1100px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker5 > * { 
+  width: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker5 {
+    position: relative;
+    margin-top: -20px;
+    width: 180px;
+    margin-left: 1093px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker5 > * { 
+  width: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker5 {
+    position: relative;
+    margin-top: -20px;
+    width: 180px;
+    margin-left: 1093px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker5 > * { 
+  width: 180px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText5 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -8px;
+    width: 100px;
+    margin-left: 940px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText5 > * { 
+  width: 100px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText5 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -8px;
+    width: 100px;
+    margin-left: 940px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText5 > * { 
+  width: 100px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText5 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -8px;
+    width: 99px;
+    margin-left: 934px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText5 > * { 
+  width: 99px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText5 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -8px;
+    width: 99px;
+    margin-left: 934px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText5 > * { 
+  width: 99px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -24px;
+    width: 100px;
+    margin-left: 600px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText4 > * { 
+  width: 100px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -24px;
+    width: 100px;
+    margin-left: 600px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText4 > * { 
+  width: 100px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -24px;
+    width: 99px;
+    margin-left: 596px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText4 > * { 
+  width: 99px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -24px;
+    width: 99px;
+    margin-left: 596px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elText4 > * { 
+  width: 99px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker4 {
+    position: relative;
+    margin-top: -80px;
+    width: 181px;
+    margin-left: 700px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker4 > * { 
+  width: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker4 {
+    position: relative;
+    margin-top: -80px;
+    width: 181px;
+    margin-left: 700px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker4 > * { 
+  width: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker4 {
+    position: relative;
+    margin-top: -80px;
+    width: 180px;
+    margin-left: 696px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker4 > * { 
+  width: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker4 {
+    position: relative;
+    margin-top: -80px;
+    width: 180px;
+    margin-left: 696px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elPicker4 > * { 
+  width: 180px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField13 {
+    position: relative;
+    margin-top: -56px;
+    width: 226px;
+    margin-left: 340px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField13 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField13 {
+    position: relative;
+    margin-top: -56px;
+    width: 226px;
+    margin-left: 340px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField13 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField13 {
+    position: relative;
+    margin-top: -56px;
+    width: 225px;
+    margin-left: 338px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField13 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField13 {
+    position: relative;
+    margin-top: -56px;
+    width: 225px;
+    margin-left: 338px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField13 > * { 
+  width: 225px;
+  }
+  
+}
+
+.KYCAMLSelectiveDisclosureScreen .state0_elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.KYCAMLSelectiveDisclosureScreen .state0_elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 62px;
+    width: 145px;
+    margin-left: 40px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 62px;
+    width: 145px;
+    margin-left: 40px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 62px;
+    width: 144px;
+    margin-left: 40px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 62px;
+    width: 144px;
+    margin-left: 40px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+
+.KYCAMLSelectiveDisclosureScreen .state0_elButton2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.KYCAMLSelectiveDisclosureScreen .state0_elButton2 button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton2 {
+    line-height: 35px;
+    position: relative;
+    margin-top: -28px;
+    width: 200px;
+    margin-left: 240px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton2 > * { 
+  width: 200px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton2 {
+    line-height: 35px;
+    position: relative;
+    margin-top: -28px;
+    width: 200px;
+    margin-left: 240px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton2 > * { 
+  width: 200px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton2 {
+    line-height: 35px;
+    position: relative;
+    margin-top: -28px;
+    width: 199px;
+    margin-left: 238px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton2 > * { 
+  width: 199px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton2 {
+    line-height: 35px;
+    position: relative;
+    margin-top: -28px;
+    width: 199px;
+    margin-left: 238px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elButton2 > * { 
+  width: 199px;
+  height: 35px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField16 {
+    position: relative;
+    margin-top: 29px;
+    width: 226px;
+    margin-left: 40px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField16 > * { 
+  width: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField16 {
+    position: relative;
+    margin-top: 29px;
+    width: 226px;
+    margin-left: 40px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField16 > * { 
+  width: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField16 {
+    position: relative;
+    margin-top: 29px;
+    width: 225px;
+    margin-left: 40px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField16 > * { 
+  width: 225px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField16 {
+    position: relative;
+    margin-top: 29px;
+    width: 225px;
+    margin-left: 40px;
+  }
+  .KYCAMLSelectiveDisclosureScreen > .layoutFlow > .state0_elField16 > * { 
+  width: 225px;
+  }
+  
+}
+
+/* This component has a fixed-size layout */
+  .Comp1 {
+    width: 100%; /* This component was designed using a width of 182px */
+    height: 100%;
+  }
+
+
+  .Comp1 > .layoutFlow > .elPicker4 {
+    position: relative;
+    margin-top: 0px;
+    width: 181px;
+    margin-left: 0px;
+  }
+  .Comp1 > .layoutFlow > .elPicker4 > * { 
+  width: 181px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .ListItem1 {
+    min-width: 184px; /* This component has a fixed size */
+  }
+
+.ListItem1 .elComp {
+  overflow: hidden;
+}
+
+.ListItem1 .elComp.hasNestedComps > div {
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+  .ListItem1 > .layoutFlow > .elComp {
+    position: relative;
+    margin-top: 0px;
+    width: 181px;
+    margin-left: 0px;
+  }
+  .ListItem1 > .layoutFlow > .elComp > * { 
+  width: 181px;
+  }
+  
+
+
+/* Narrowest size for this element's responsive layout */
+  .DisclosureDataSetsScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .DisclosureDataSetsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .DisclosureDataSetsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .DisclosureDataSetsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .DisclosureDataSetsScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 683px;
+    margin-left: 0px;
+  }
+  .DisclosureDataSetsScreen > .layoutFlow > .elSpacer > * { 
+  width: 683px;
+  height: 50px;
+  }
+  
+@media (min-width: 568px) {
+  .DisclosureDataSetsScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 683px;
+    margin-left: 0px;
+  }
+  .DisclosureDataSetsScreen > .layoutFlow > .elSpacer > * { 
+  width: 683px;
+  height: 50px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .DisclosureDataSetsScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 683px;
+    margin-left: 0px;
+  }
+  .DisclosureDataSetsScreen > .layoutFlow > .elSpacer > * { 
+  width: 683px;
+  height: 50px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .DisclosureDataSetsScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 683px;
+    margin-left: 0px;
+  }
+  .DisclosureDataSetsScreen > .layoutFlow > .elSpacer > * { 
+  width: 683px;
+  height: 50px;
+  }
+  
+}
+
