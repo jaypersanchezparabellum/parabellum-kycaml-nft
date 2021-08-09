@@ -22,7 +22,7 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
     super(props);
     
     this.state = {
-      checkbox: true,
+      
     };
   }
 
@@ -176,7 +176,7 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
   checkboxChanged_state0_elCheckbox348561 = (event) => {
     this.setState({checkbox: (event.target.checked ? 'true' : 'false')}, async () => {
       // Write your script here
-      alert(`${this.state.checkbox}`)
+      //alert(`${this.state.checkbox}`)
       
     });
   }
@@ -502,27 +502,27 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
           </div>
 
           <div className="state0_elField7">
-            <Input className="baseFont" style={style_state0_elField7} type="text" placeholder={this.props.locStrings.start_field7_656794} onChange={this.textInputChanged_state0_elField7} value={this.getValue_state0_elField7()}  disabled = { checked_checkbox === 'true' || checked_checkbox === true } />
+            <Input className="baseFont" style={style_state0_elField7} type="text" placeholder={this.props.locStrings.start_field7_656794} onChange={this.textInputChanged_state0_elField7} value={this.getValue_state0_elField7()}  disabled = { checked_checkbox === 'false' || checked_checkbox === false } />
           </div>
           
           <div className="state0_elField10">
-            <Input className="baseFont" style={style_state0_elField10} type="text" placeholder={this.props.locStrings.start_field10_791713} onChange={this.textInputChanged_state0_elField10} value={this.getValue_state0_elField10()}  />
+            <Input className="baseFont" style={style_state0_elField10} type="text" placeholder={this.props.locStrings.start_field10_791713} onChange={this.textInputChanged_state0_elField10} value={this.getValue_state0_elField10()}  disabled = { checked_checkbox === 'false' || checked_checkbox === false } />
           </div>
           
           <div className="state0_elField9">
-            <Input className="baseFont" style={style_state0_elField9} type="text" placeholder={this.props.locStrings.start_field9_573875} onChange={this.textInputChanged_state0_elField9} value={this.getValue_state0_elField9()}  />
+            <Input className="baseFont" style={style_state0_elField9} type="text" placeholder={this.props.locStrings.start_field9_573875} onChange={this.textInputChanged_state0_elField9} value={this.getValue_state0_elField9()} disabled = { checked_checkbox === 'false' || checked_checkbox === false } />
           </div>
           
           <div className="state0_elField8">
-            <Input className="baseFont" style={style_state0_elField8} type="text" placeholder={this.props.locStrings.start_field8_35435} onChange={this.textInputChanged_state0_elField8} value={this.getValue_state0_elField8()}  />
+            <Input className="baseFont" style={style_state0_elField8} type="text" placeholder={this.props.locStrings.start_field8_35435} onChange={this.textInputChanged_state0_elField8} value={this.getValue_state0_elField8()} disabled = { checked_checkbox === 'false' || checked_checkbox === false } />
           </div>
           
           <div className="state0_elField11">
-            <Input className="baseFont" style={style_state0_elField11} type="text" placeholder={this.props.locStrings.start_field11_380811} onChange={this.textInputChanged_state0_elField11} value={this.getValue_state0_elField11()}  />
+            <Input className="baseFont" style={style_state0_elField11} type="text" placeholder={this.props.locStrings.start_field11_380811} onChange={this.textInputChanged_state0_elField11} value={this.getValue_state0_elField11()} disabled = { checked_checkbox === 'false' || checked_checkbox === false } />
           </div>
           
           <div className="state0_elField12">
-            <Input className="baseFont" style={style_state0_elField12} type="text" placeholder={this.props.locStrings.start_field12_354434} onChange={this.textInputChanged_state0_elField12} value={this.getValue_state0_elField12()}  />
+            <Input className="baseFont" style={style_state0_elField12} type="text" placeholder={this.props.locStrings.start_field12_354434} onChange={this.textInputChanged_state0_elField12} value={this.getValue_state0_elField12()} disabled = { checked_checkbox === 'false' || checked_checkbox === false } />
           </div>
           
           <div className="state0_elPicker">
@@ -530,18 +530,18 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
           </div>
           
           <div className="state0_elPicker2">
-            <Select className="baseFont" style={style_state0_elPicker2}  onChange={this.pickerValueChanged_state0_elPicker2} value={selection_picker2} >
+            <Select className="baseFont" style={style_state0_elPicker2}  onChange={this.pickerValueChanged_state0_elPicker2} value={selection_picker2} disabled = { checked_checkbox === 'false' || checked_checkbox === false } >
               {items_picker2.every(item => {
                 return item.value !== selection_picker2;
               }) ? <Option value=''/> : null}
               {items_picker2.map(item => {
                 return <Option value={item.value} label={item.label} />
-              })}
+              })} 
             </Select>
           </div>
           
           <div className="state0_elPicker3">
-            <Select className="baseFont" style={style_state0_elPicker3}  onChange={this.pickerValueChanged_state0_elPicker3} value={selection_picker3} >
+            <Select className="baseFont" style={style_state0_elPicker3}  onChange={this.pickerValueChanged_state0_elPicker3} value={selection_picker3} disabled = { checked_checkbox === 'false' || checked_checkbox === false } >
               {items_picker3.every(item => {
                 return item.value !== selection_picker3;
               }) ? <Option value=''/> : null}
@@ -564,11 +564,11 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
           </div>
           
           <div className="state0_elField4">
-            <Input className="baseFont" style={style_state0_elField4} type="text" placeholder={this.props.locStrings.start_field4_92655} onChange={this.textInputChanged_state0_elField4} value={this.getValue_state0_elField4()}  />
+            <Input className="baseFont" style={style_state0_elField4} type="text" placeholder={this.props.locStrings.start_field4_92655} onChange={this.textInputChanged_state0_elField4} value={this.getValue_state0_elField4()} disabled = { checked_checkbox === 'false' || checked_checkbox === false } />
           </div>
           
           <div className="state0_elPicker5">
-            <Select className="baseFont" style={style_state0_elPicker5}  onChange={this.pickerValueChanged_state0_elPicker5} value={selection_picker5} >
+            <Select className="baseFont" style={style_state0_elPicker5}  onChange={this.pickerValueChanged_state0_elPicker5} value={selection_picker5} disabled = { checked_checkbox === 'false' || checked_checkbox === false } >
               {items_picker5.every(item => {
                 return item.value !== selection_picker5;
               }) ? <Option value=''/> : null}
@@ -591,7 +591,7 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
           </div>
           
           <div className="state0_elPicker4">
-            <Select className="baseFont" style={style_state0_elPicker4}  onChange={this.pickerValueChanged_state0_elPicker4} value={selection_picker4} >
+            <Select className="baseFont" style={style_state0_elPicker4}  onChange={this.pickerValueChanged_state0_elPicker4} value={selection_picker4} disabled = { checked_checkbox === 'false' || checked_checkbox === false } >
               {items_picker4.every(item => {
                 return item.value !== selection_picker4;
               }) ? <Option value=''/> : null}
@@ -602,7 +602,7 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
           </div>
           
           <div className="state0_elField13">
-            <Input className="baseFont" style={style_state0_elField13} type="text" placeholder={this.props.locStrings.start_field13_337271} onChange={this.textInputChanged_state0_elField13} value={this.getValue_state0_elField13()}  />
+            <Input className="baseFont" style={style_state0_elField13} type="text" placeholder={this.props.locStrings.start_field13_337271} onChange={this.textInputChanged_state0_elField13} value={this.getValue_state0_elField13()}  disabled = { checked_checkbox === 'false' || checked_checkbox === false } />
           </div>
           
           <div className="state0_elButton">
