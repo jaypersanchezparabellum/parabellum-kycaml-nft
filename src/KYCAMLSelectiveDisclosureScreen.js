@@ -502,7 +502,7 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
           </div>
 
           <div className="state0_elField7">
-            <Input className="baseFont" style={style_state0_elField7} type="text" placeholder={this.props.locStrings.start_field7_656794} onChange={this.textInputChanged_state0_elField7} value={this.getValue_state0_elField7()}  disabled = {this.getValue_state0_elCheckbox348561()} />
+            <Input className="baseFont" style={style_state0_elField7} type="text" placeholder={this.props.locStrings.start_field7_656794} onChange={this.textInputChanged_state0_elField7} value={this.getValue_state0_elField7()}  disabled = { checked_checkbox === 'true' || checked_checkbox === true } />
           </div>
           
           <div className="state0_elField10">
