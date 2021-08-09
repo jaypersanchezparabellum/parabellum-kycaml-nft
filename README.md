@@ -66,3 +66,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+this.getValue_state0_elField7()
+this.getValue_state0_elField10()
+this.getValue_state0_elField9()
+this.getValue_state0_elField8()
+this.getValue_state0_elField11()
+//this.getValue_state0_elField12()//
+Date.parse(this.getValue_state0_elPicker())
+this.getValue_state0_elPicker2 //pickter
+this.getValue_state0_elPicker3 //pickert
+this.getValue_state0_elText3
+this.getValue_state0_elField4()
+this.getValue_state0_elPicker5 //picker

@@ -226,7 +226,7 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
   //weight
   textInputChanged_state0_elField13 = (event) => {
     console.log(`textInputChangedState0Field13 ${event.target.value}`)
-    this.setState({field13: event.target.value});
+    this.setState({field3: event.target.value});
   }
   
   getValue_state0_elField13 = () => {
@@ -234,12 +234,13 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
   }
   
   onClick_state0_elButton = async() => {
-    console.log(`onClick Save & Exit`)
+   
+    alert(`Save ${JSON.stringify(this.state)}`)
   }
 
   onClick_state0_elButton2 = async () => {
     // Go to screen 'Supporting Document Upload'
-    console.log(`onClick_state0_elButton2 go to supporting doc upload`)
+    //console.log(`onClick_state0_elButton2 go to supporting doc upload`)
     this.props.appActions.goToScreen('supportingDocumentUpload', { ...this.props, transitionId: 'slideIn_bottom' });
   
   }
