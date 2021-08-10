@@ -226,7 +226,7 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
   //weight
   textInputChanged_state0_elField13 = (event) => {
     console.log(`textInputChangedState0Field13 ${event.target.value}`)
-    this.setState({field3: event.target.value});
+    this.setState({field13: event.target.value});
   }
   
   getValue_state0_elField13 = () => {
@@ -234,7 +234,7 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
   }
   
   onClick_state0_elButton = async() => {
-   
+    //store data somewhere and need to send these data set to a vendor?
     alert(`Save ${JSON.stringify(this.state)}`)
   }
 
