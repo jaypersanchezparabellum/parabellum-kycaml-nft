@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@passbase/button": "^3.6.2",
     "mongodb": "^4.1.0",
     "muicss": "^0.10.3",
     "react": "^16.8.6",
@@ -10,7 +11,8 @@
     "react-dom": "^16.8.6",
     "react-localization": "^1.0.13",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "styled-components": "^5.3.0"
   },
   "scripts": {
     "start": "cross-env PORT=3000 react-scripts start",

@@ -3,6 +3,7 @@ import './App.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import btn_icon_back_kycamlselectivedisclosure from './images/btn_icon_back_kycamlselectivedisclosure.png';
+import VerifyButton from "@passbase/button/react";
 
 
 // UI framework component imports
@@ -244,6 +245,10 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
     this.props.appActions.goToScreen('supportingDocumentUpload', { ...this.props, transitionId: 'slideIn_bottom' });
   
   }
+
+  onClick_state0_elButton3 = async () => {
+    alert(`Verify Button`);
+  }
   
   //template
   textInputChanged_state0_elField16 = (event) => {
@@ -253,6 +258,12 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
   
   getValue_state0_elField16 = () => {
     return this.state.field16 || '';
+  }
+
+  //passbase verification button
+  referenceUserWithKey = (key) => {
+    alert(`key ${key}`)
+    // Make request to your backend/db and save the key to the user's profile
   }
   
   renderState0() {
@@ -452,6 +463,15 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
       pointerEvents: 'auto',
      };
     
+    const style_state0_elButton3 = {
+      display: 'block',
+      color: '(null)',
+      textAlign: 'center',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+    }
+
+
     const style_state0_elField16 = {
       display: 'block',
       paddingTop: 0,
@@ -617,6 +637,27 @@ export default class KYCAMLSelectiveDisclosureScreen extends Component {
               {this.props.locStrings.start_button2_848272}
             </Button>
           </div>
+
+
+          <div className="state0_elButton3">
+          <VerifyButton
+            apiKey={"TBFIEVmCNIcZ7605NBsoe9kVbM21Sdss6fXlztkkltvZIse6WA6u3NEUfXJXU3CG"}
+            onClick={(identityAccessKey) => {
+              //this.setState({picker4: event.target.value});
+              this.referenceUserWithKey(identityAccessKey)
+              //this.onClick_state0_elButton3
+            }}
+            onFinish={(identityAccessKey) => {}}
+            onError={(errorCode) => {}}
+            onStart={() => {}}
+            prefillAttributes={{
+              email: "jayper@parabellum.io",
+              country: "en"
+            }}
+            style={style_state0_elButton3}
+          />;
+        </div>
+
           
           <div className="state0_elField16">
             <Input className="baseFont" style={style_state0_elField16} type="text" placeholder={this.props.locStrings.kycamlselectivedisclosure_field16_773248} onChange={this.textInputChanged_state0_elField16} value={this.getValue_state0_elField16()}  />
